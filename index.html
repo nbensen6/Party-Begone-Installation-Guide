@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party Limit Begone - Installation Guide for Baldur's Gate 3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        h1 {
+            color: #d4af37;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .subtitle {
+            color: #a0a0a0;
+            font-size: 1.1rem;
+        }
+
+        .important-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.1));
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .important-box h2 {
+            color: #d4af37;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, rgba(220, 53, 69, 0.2), rgba(220, 53, 69, 0.1));
+            border: 2px solid #dc3545;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .warning-box h3 {
+            color: #dc3545;
+            margin-bottom: 10px;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, rgba(23, 162, 184, 0.2), rgba(23, 162, 184, 0.1));
+            border: 2px solid #17a2b8;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .info-box h3 {
+            color: #17a2b8;
+            margin-bottom: 10px;
+        }
+
+        .success-box {
+            background: linear-gradient(135deg, rgba(40, 167, 69, 0.2), rgba(40, 167, 69, 0.1));
+            border: 2px solid #28a745;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .success-box h3 {
+            color: #28a745;
+            margin-bottom: 10px;
+        }
+
+        section {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h2 {
+            color: #d4af37;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        h3 {
+            color: #f0f0f0;
+            margin: 20px 0 15px 0;
+        }
+
+        .step {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #d4af37;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: #d4af37;
+            color: #1a1a2e;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        .step-title {
+            font-size: 1.2rem;
+            color: #f0f0f0;
+            display: inline;
+        }
+
+        .step-content {
+            margin-top: 15px;
+            padding-left: 50px;
+        }
+
+        .gif-placeholder {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px dashed rgba(212, 175, 55, 0.5);
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            margin: 15px 0;
+            color: #a0a0a0;
+        }
+
+        .gif-placeholder img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        code {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            color: #7ec8e3;
+            font-size: 0.95rem;
+        }
+
+        .code-block {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .code-block code {
+            background: none;
+            padding: 0;
+            display: block;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        a {
+            color: #7ec8e3;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #d4af37;
+            text-decoration: underline;
+        }
+
+        .button {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4af37, #b8962e);
+            color: #1a1a2e;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 10px 5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+            text-decoration: none;
+            color: #1a1a2e;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        th {
+            background: rgba(212, 175, 55, 0.2);
+            color: #d4af37;
+        }
+
+        tr:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .toc {
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .toc h3 {
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+
+        .toc ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .toc li {
+            margin: 8px 0;
+        }
+
+        .toc a {
+            color: #e0e0e0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #a0a0a0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            .step-content {
+                padding-left: 0;
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Party Limit Begone</h1>
+            <p class="subtitle">Installation Guide for Baldur's Gate 3 (Patch 8 Compatible)</p>
+        </header>
+
+        <div class="important-box">
+            <h2>What Does This Mod Do?</h2>
+            <p>Party Limit Begone removes the 4-party-member restriction in Baldur's Gate 3, allowing you to adventure with:</p>
+            <ul>
+                <li><strong>Up to 16 companions</strong> in single-player</li>
+                <li><strong>Up to 8 players</strong> in multiplayer co-op</li>
+            </ul>
+            <p style="margin-top: 15px;">Now your whole friend group can play together without anyone being left out!</p>
+        </div>
+
+        <nav class="toc">
+            <h3>Table of Contents</h3>
+            <ul>
+                <li><a href="#multiplayer">Do All Players Need the Mod?</a></li>
+                <li><a href="#requirements">Requirements</a></li>
+                <li><a href="#method1">Method 1: BG3 Mod Manager (Recommended)</a></li>
+                <li><a href="#method2">Method 2: Manual Installation</a></li>
+                <li><a href="#multiplayer-setup">Multiplayer Setup</a></li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+                <li><a href="#known-issues">Known Issues</a></li>
+            </ul>
+        </nav>
+
+        <section id="multiplayer">
+            <h2>Do All Players Need the Mod?</h2>
+
+            <div class="success-box">
+                <h3>Good News for Your Friends!</h3>
+                <p><strong>Only the HOST needs to install the mod.</strong> Other players can join the session without installing anything!</p>
+            </div>
+
+            <table>
+                <tr>
+                    <th>Player Role</th>
+                    <th>Mod Required?</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td><strong>Host (creates the game)</strong></td>
+                    <td>Yes</td>
+                    <td>Must have mod fully installed</td>
+                </tr>
+                <tr>
+                    <td><strong>Joining Players</strong></td>
+                    <td>No</td>
+                    <td>Can join without any installation</td>
+                </tr>
+            </table>
+
+            <div class="info-box">
+                <h3>Important Note</h3>
+                <p>The game launcher may show a "data mismatch" warning when joining. This is <strong>completely normal</strong> and can be safely ignored - just click through it!</p>
+            </div>
+        </section>
+
+        <section id="requirements">
+            <h2>Requirements</h2>
+            <ul>
+                <li><strong>Platform:</strong> PC only (Windows)</li>
+                <li><strong>Game Version:</strong> Baldur's Gate 3 (Patch 8 or later)</li>
+                <li><strong>Account:</strong> Free Nexus Mods account (for downloading)</li>
+                <li><strong>Prerequisite:</strong> Run BG3 at least once before installing mods</li>
+            </ul>
+
+            <h3>Download Links</h3>
+            <p>
+                <a href="https://www.nexusmods.com/baldursgate3/mods/327" class="button" target="_blank">Download Party Limit Begone</a>
+                <a href="https://github.com/LaughingLeader/BG3ModManager/releases" class="button" target="_blank">Download BG3 Mod Manager</a>
+            </p>
+        </section>
+
+        <section id="method1">
+            <h2>Method 1: BG3 Mod Manager (Recommended)</h2>
+            <p>This is the easiest method for beginners. The mod manager handles everything for you!</p>
+
+            <div class="step">
+                <span class="step-number">1</span>
+                <span class="step-title">Download and Install BG3 Mod Manager</span>
+                <div class="step-content">
+                    <ol>
+                        <li>Go to the <a href="https://github.com/LaughingLeader/BG3ModManager/releases" target="_blank">BG3 Mod Manager releases page</a></li>
+                        <li>Download the latest <code>.zip</code> file</li>
+                        <li>Extract it to a folder (NOT in Program Files)</li>
+                        <li>Run <code>BG3ModManager.exe</code></li>
+                    </ol>
+                    <div class="gif-placeholder">
+                        <p>[GIF: Downloading and extracting BG3 Mod Manager]</p>
+                        <!-- Replace with: <img src="gifs/step1-download-manager.gif" alt="Downloading BG3 Mod Manager"> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <span class="step-title">Install Script Extender</span>
+                <div class="step-content">
+                    <p>Party Limit Begone requires Script Extender to work.</p>
+                    <ol>
+                        <li>In BG3 Mod Manager, go to <strong>Tools</strong> menu</li>
+                        <li>Click <strong>"Download & Extract the Script Extender"</strong></li>
+                        <li>Wait for it to complete</li>
+                    </ol>
+                    <div class="gif-placeholder">
+                        <p>[GIF: Installing Script Extender from Tools menu]</p>
+                        <!-- Replace with: <img src="gifs/step2-script-extender.gif" alt="Installing Script Extender"> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">3</span>
+                <span class="step-title">Download Party Limit Begone</span>
+                <div class="step-content">
+                    <ol>
+                        <li>Go to <a href="https://www.nexusmods.com/baldursgate3/mods/327" target="_blank">Party Limit Begone on Nexus Mods</a></li>
+                        <li>Click the <strong>"Files"</strong> tab</li>
+                        <li>Click <strong>"Manual Download"</strong> on the main file</li>
+                        <li>Save the <code>.zip</code> file somewhere you can find it</li>
+                    </ol>
+                    <div class="gif-placeholder">
+                        <p>[GIF: Downloading from Nexus Mods]</p>
+                        <!-- Replace with: <img src="gifs/step3-download-mod.gif" alt="Downloading from Nexus Mods"> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">4</span>
+                <span class="step-title">Import the Mod</span>
+                <div class="step-content">
+                    <ol>
+                        <li>In BG3 Mod Manager, go to <strong>File → Import Mod</strong></li>
+                        <li>Select the <code>.zip</code> file you downloaded</li>
+                        <li>The mod will appear in the right panel (Inactive Mods)</li>
+                    </ol>
+                    <div class="gif-placeholder">
+                        <p>[GIF: Importing mod into BG3 Mod Manager]</p>
+                        <!-- Replace with: <img src="gifs/step4-import-mod.gif" alt="Importing mod"> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">5</span>
+                <span class="step-title">Activate the Mod</span>
+                <div class="step-content">
+                    <ol>
+                        <li><strong>Drag</strong> the mod from the right panel to the left panel (Active Mods)</li>
+                        <li>Click the <strong>Save icon</strong> (or press Ctrl+S) to save your load order</li>
+                        <li>Click <strong>"Export Load Order to Game"</strong> button</li>
+                    </ol>
+                    <div class="gif-placeholder">
+                        <p>[GIF: Dragging mod to active and exporting]</p>
+                        <!-- Replace with: <img src="gifs/step5-activate-mod.gif" alt="Activating mod"> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">6</span>
+                <span class="step-title">Launch the Game</span>
+                <div class="step-content">
+                    <ol>
+                        <li>Start Baldur's Gate 3</li>
+                        <li>If you see a "data mismatch" warning, click through it</li>
+                        <li>Load your save or start a new game</li>
+                        <li><strong>Dismiss one party member</strong>, then re-add them to activate the new limit</li>
+                    </ol>
+                    <div class="gif-placeholder">
+                        <p>[GIF: Launching game and dismissing/re-adding party member]</p>
+                        <!-- Replace with: <img src="gifs/step6-launch-game.gif" alt="Launching game"> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="success-box">
+                <h3>You're Done!</h3>
+                <p>The mod is now installed. You can have up to 16 companions or 8 players in your party!</p>
+            </div>
+        </section>
+
+        <section id="method2">
+            <h2>Method 2: Manual Installation</h2>
+            <p>If you prefer not to use a mod manager, you can install manually.</p>
+
+            <div class="step">
+                <span class="step-number">1</span>
+                <span class="step-title">Download the Mod</span>
+                <div class="step-content">
+                    <ol>
+                        <li>Go to <a href="https://www.nexusmods.com/baldursgate3/mods/327" target="_blank">Party Limit Begone on Nexus Mods</a></li>
+                        <li>Download the main file</li>
+                        <li>Extract the <code>.zip</code> file</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <span class="step-title">Move Files to Game Folder</span>
+                <div class="step-content">
+                    <p>Move the entire <code>Mods</code> folder from the extracted files into your BG3 Data directory:</p>
+                    <div class="code-block">
+                        <code>C:\Program Files (x86)\Steam\steamapps\common\Baldurs Gate 3\Data</code>
+                    </div>
+                    <p><em>Note: Your Steam path may be different if you installed Steam elsewhere.</em></p>
+                    <div class="gif-placeholder">
+                        <p>[GIF: Moving Mods folder to Data directory]</p>
+                        <!-- Replace with: <img src="gifs/manual-step2-move-files.gif" alt="Moving files"> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">3</span>
+                <span class="step-title">Run the Patcher</span>
+                <div class="step-content">
+                    <ol>
+                        <li>Find <code>PartyLimitBegonePatcher.bat</code> in the extracted files</li>
+                        <li>Find your <code>bg3.exe</code> file (in the game's <code>bin</code> folder)</li>
+                        <li><strong>Drag and drop</strong> <code>bg3.exe</code> onto the <code>.bat</code> file</li>
+                        <li>A backup will be created automatically</li>
+                    </ol>
+                    <div class="code-block">
+                        <code>bg3.exe location: C:\Program Files (x86)\Steam\steamapps\common\Baldurs Gate 3\bin\bg3.exe</code>
+                    </div>
+                    <div class="gif-placeholder">
+                        <p>[GIF: Dragging bg3.exe onto the patcher]</p>
+                        <!-- Replace with: <img src="gifs/manual-step3-patcher.gif" alt="Running patcher"> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">4</span>
+                <span class="step-title">Launch and Verify</span>
+                <div class="step-content">
+                    <ol>
+                        <li>Start Baldur's Gate 3</li>
+                        <li>Dismiss the "data mismatch" warning if it appears</li>
+                        <li>Dismiss and re-add a party member to activate the new limit</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="multiplayer-setup">
+            <h2>Multiplayer Setup</h2>
+
+            <div class="info-box">
+                <h3>For the Host</h3>
+                <p>If you want to expand an <strong>existing multiplayer save</strong> to use larger parties:</p>
+                <ol>
+                    <li>Create a <strong>new lobby</strong></li>
+                    <li>Set your desired party size in the settings</li>
+                    <li>Start a <strong>new game</strong></li>
+                    <li>Then <strong>load your existing save</strong></li>
+                </ol>
+                <p style="margin-top: 10px;"><em>You cannot change the party size limit from within an active game session.</em></p>
+            </div>
+
+            <div class="success-box">
+                <h3>For Players Joining</h3>
+                <p>Simply join the host's game as normal. No installation required! If you see a warning about data mismatch, just click through it.</p>
+            </div>
+
+            <div class="warning-box">
+                <h3>Cross-Play Note</h3>
+                <p>If playing with console friends: Have console players join <strong>first</strong>, then PC players join after. This helps avoid connection issues.</p>
+            </div>
+        </section>
+
+        <section id="troubleshooting">
+            <h2>Troubleshooting</h2>
+
+            <h3>Mod isn't working?</h3>
+            <ul>
+                <li><strong>Try dismissing</strong> one of your current party members, then re-add them. This resets the party limit.</li>
+                <li>Make sure you <strong>exported the load order</strong> in BG3 Mod Manager</li>
+                <li>Verify Script Extender is installed (Method 1)</li>
+            </ul>
+
+            <h3>Game won't launch?</h3>
+            <ul>
+                <li>If you used manual installation, restore your backup <code>bg3.exe</code></li>
+                <li>Verify game files through Steam (Right-click game → Properties → Local Files → Verify)</li>
+            </ul>
+
+            <h3>Data mismatch warning?</h3>
+            <ul>
+                <li>This is <strong>completely normal</strong> - just click through it!</li>
+            </ul>
+        </section>
+
+        <section id="known-issues">
+            <h2>Known Issues</h2>
+
+            <div class="warning-box">
+                <h3>Be Aware</h3>
+                <ul>
+                    <li><strong>Some events may glitch</strong> with 5+ party members. Solution: Temporarily dismiss extra members for that encounter.</li>
+                    <li><strong>Grymforge boat:</strong> Reduce party to 4 members before sailing.</li>
+                    <li><strong>Camp sleeping bugs:</strong> Use awake companions or reduce party to 4.</li>
+                    <li><strong>Some cutscenes</strong> are designed for 4 players and may look odd with more.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Uninstalling the Mod</h2>
+            <h3>If using BG3 Mod Manager:</h3>
+            <ol>
+                <li>Drag the mod from Active to Inactive mods</li>
+                <li>Save and export load order</li>
+            </ol>
+
+            <h3>If installed manually:</h3>
+            <ol>
+                <li>Restore your backup <code>bg3.exe</code> file</li>
+                <li>Delete the <code>Mods</code> folder from your Data directory</li>
+            </ol>
+        </section>
+
+        <footer>
+            <p>Guide created for Baldur's Gate 3 Patch 8 (December 2025)</p>
+            <p>Mod by SildurFX on Nexus Mods</p>
+            <p style="margin-top: 15px;">
+                <a href="https://www.nexusmods.com/baldursgate3/mods/327" target="_blank">Nexus Mods Page</a> |
+                <a href="https://github.com/LaughingLeader/BG3ModManager" target="_blank">BG3 Mod Manager</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
