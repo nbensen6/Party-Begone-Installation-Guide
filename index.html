@@ -323,6 +323,12 @@
             <p style="margin-top: 15px;">Now your whole friend group can play together without anyone being left out!</p>
         </div>
 
+        <div class="warning-box">
+            <h3>Patch 8 Hotfix 35 Notice (from Mod Author)</h3>
+            <p><strong>Mod Version:</strong> v1.6 (MP patch) - Updated for Patch 8 Hotfix 34/35</p>
+            <p style="margin-top: 10px;">If you updated to Hotfix 35, you need to <strong>reapply your MP patches</strong>!</p>
+        </div>
+
         <nav class="toc">
             <h3>Table of Contents</h3>
             <ul>
@@ -330,9 +336,10 @@
                 <li><a href="#requirements">Requirements</a></li>
                 <li><a href="#method1">Method 1: BG3 Mod Manager (Recommended)</a></li>
                 <li><a href="#method2">Method 2: Manual Installation</a></li>
+                <li><a href="#launching">How to Launch the Game</a></li>
                 <li><a href="#multiplayer-setup">Multiplayer Setup</a></li>
                 <li><a href="#troubleshooting">Troubleshooting</a></li>
-                <li><a href="#known-issues">Known Issues</a></li>
+                <li><a href="#known-issues">Known Issues (Patch 8)</a></li>
             </ul>
         </nav>
 
@@ -559,6 +566,49 @@
             </div>
         </section>
 
+        <section id="launching">
+            <h2>How to Launch the Game</h2>
+
+            <div class="warning-box">
+                <h3>Important: Steam Matchmaking Issues</h3>
+                <p>The latest hotfix broke Steam matchmaking for some users. If you're having connection issues, use the workaround below.</p>
+            </div>
+
+            <div class="info-box">
+                <h3>Recommended: Launch bg3.exe Directly</h3>
+                <p>Instead of launching through Steam, <strong>close Steam</strong> and launch the game directly from the executable:</p>
+                <div class="code-block">
+                    <code>C:\Program Files (x86)\Steam\steamapps\common\Baldurs Gate 3\bin\bg3.exe</code>
+                </div>
+                <p style="margin-top: 10px;">This bypasses Steam matchmaking and can fix connection issues.</p>
+                <p style="margin-top: 10px;"><strong>Tip:</strong> Create a desktop shortcut to <code>bg3.exe</code> for easy access!</p>
+            </div>
+
+            <h3>Alternative Launch Methods</h3>
+            <table>
+                <tr>
+                    <th>Method</th>
+                    <th>How</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td><strong>Direct EXE</strong></td>
+                    <td>Run <code>bg3.exe</code> from the bin folder</td>
+                    <td>Recommended if having issues</td>
+                </tr>
+                <tr>
+                    <td><strong>Steam with --skip-launcher</strong></td>
+                    <td>Add <code>--skip-launcher</code> to Steam launch options</td>
+                    <td>Skips Larian launcher</td>
+                </tr>
+                <tr>
+                    <td><strong>Normal Steam</strong></td>
+                    <td>Launch through Steam as usual</td>
+                    <td>Works for most users</td>
+                </tr>
+            </table>
+        </section>
+
         <section id="multiplayer-setup">
             <h2>Multiplayer Setup</h2>
 
@@ -588,11 +638,30 @@
         <section id="troubleshooting">
             <h2>Troubleshooting</h2>
 
+            <div class="important-box">
+                <h2>Common Fixes (from Mod Author)</h2>
+                <ol>
+                    <li><strong>Delete your .exe files</strong> and let Steam verify the game files (Right-click game → Properties → Local Files → Verify). Then <strong>reapply the MP patch</strong> if needed.</li>
+                    <li><strong>Delete your settings folder</strong> (keep PlayerProfiles!):
+                        <div class="code-block">
+                            <code>C:\Users\%username%\AppData\Local\Larian Studios\Baldur's Gate 3</code>
+                        </div>
+                        <p>Delete everything in this folder <strong>except</strong> the PlayerProfiles folder.</p>
+                    </li>
+                </ol>
+            </div>
+
             <h3>Mod isn't working?</h3>
             <ul>
                 <li><strong>Try dismissing</strong> one of your current party members, then re-add them. This resets the party limit.</li>
                 <li>Make sure you <strong>exported the load order</strong> in BG3 Mod Manager</li>
                 <li>Verify Script Extender is installed (Method 1)</li>
+            </ul>
+
+            <h3>Can't connect to multiplayer?</h3>
+            <ul>
+                <li><strong>Close Steam</strong> and launch <code>bg3.exe</code> directly (see <a href="#launching">How to Launch</a>)</li>
+                <li>This bypasses Steam matchmaking which is broken for some users</li>
             </ul>
 
             <h3>Game won't launch?</h3>
@@ -608,16 +677,30 @@
         </section>
 
         <section id="known-issues">
-            <h2>Known Issues</h2>
+            <h2>Known Issues (Patch 8)</h2>
 
             <div class="warning-box">
-                <h3>Be Aware</h3>
+                <h3>Patch 8 Specific Bugs (from Mod Author)</h3>
+                <ul>
+                    <li><strong>Honor Mode Issue:</strong> Fresh lobbies with more than 4 players cause problems. <strong>Workaround:</strong> Launch with 4 or fewer players, then invite the rest once you're fully in-game.</li>
+                    <li><strong>Crossplay Lobbies:</strong> No longer display the direct connection ID. Playing with more than 4 players still works using <strong>LAN mode with Hamachi</strong>.</li>
+                    <li><strong>Steam Matchmaking:</strong> Latest hotfix broke it for some users. <strong>Workaround:</strong> Close Steam and launch <code>bg3.exe</code> directly.</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>General Issues</h3>
                 <ul>
                     <li><strong>Some events may glitch</strong> with 5+ party members. Solution: Temporarily dismiss extra members for that encounter.</li>
                     <li><strong>Grymforge boat:</strong> Reduce party to 4 members before sailing.</li>
                     <li><strong>Camp sleeping bugs:</strong> Use awake companions or reduce party to 4.</li>
                     <li><strong>Some cutscenes</strong> are designed for 4 players and may look odd with more.</li>
                 </ul>
+            </div>
+
+            <div class="success-box">
+                <h3>Need More Help?</h3>
+                <p>The mod author has a <strong>Discord server</strong> for additional support. Check the <a href="https://www.nexusmods.com/baldursgate3/mods/327" target="_blank">Nexus Mods page</a> for the invite link.</p>
             </div>
         </section>
 
