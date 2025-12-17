@@ -334,12 +334,15 @@
             <ul>
                 <li><a href="#multiplayer">Do All Players Need the Mod?</a></li>
                 <li><a href="#requirements">Requirements</a></li>
-                <li><a href="#method1">Method 1: BG3 Mod Manager (Recommended)</a></li>
-                <li><a href="#method2">Method 2: Manual Installation</a></li>
+                <li><a href="#method1">Method 1: Standalone (Recommended - Easiest)</a></li>
+                <li><a href="#method2">Method 2: Script Extender Version</a></li>
+                <li><a href="#mp-patch">Multiplayer Patch (Required for 5+ Players)</a></li>
                 <li><a href="#launching">How to Launch the Game</a></li>
                 <li><a href="#multiplayer-setup">Multiplayer Setup</a></li>
+                <li><a href="#crossplay">Console/Crossplay Support</a></li>
+                <li><a href="#linux-mac">Linux and Mac Support</a></li>
                 <li><a href="#troubleshooting">Troubleshooting</a></li>
-                <li><a href="#known-issues">Known Issues (Patch 8)</a></li>
+                <li><a href="#known-issues">Known Issues</a></li>
             </ul>
         </nav>
 
@@ -378,7 +381,7 @@
         <section id="requirements">
             <h2>Requirements</h2>
             <ul>
-                <li><strong>Platform:</strong> PC only (Windows)</li>
+                <li><strong>Platform:</strong> PC (Windows, Linux, Mac - see <a href="#linux-mac">Linux/Mac section</a>)</li>
                 <li><strong>Game Version:</strong> Baldur's Gate 3 (Patch 8 or later)</li>
                 <li><strong>Account:</strong> Free Nexus Mods account (for downloading)</li>
                 <li><strong>Prerequisite:</strong> Run BG3 at least once before installing mods</li>
@@ -389,25 +392,98 @@
                 <a href="https://www.nexusmods.com/baldursgate3/mods/327" class="button" target="_blank">Download Party Limit Begone</a>
                 <a href="https://github.com/LaughingLeader/BG3ModManager/releases" class="button" target="_blank">Download BG3 Mod Manager</a>
             </p>
+
+            <div class="info-box">
+                <h3>Which Version Do I Need?</h3>
+                <table>
+                    <tr>
+                        <th>Version</th>
+                        <th>Use Case</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Standalone</strong></td>
+                        <td>Single player with 16 companions, OR multiplayer up to 4 players</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Standalone + MP Patch</strong></td>
+                        <td>Multiplayer with 5-8 players (requires extra step)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Script Extender Version</strong></td>
+                        <td>If you're already using other Script Extender mods</td>
+                    </tr>
+                </table>
+            </div>
         </section>
 
         <section id="method1">
-            <h2>Method 1: BG3 Mod Manager (Recommended)</h2>
-            <p>This is the easiest method for beginners. The mod manager handles everything for you!</p>
+            <h2>Method 1: Standalone Version (Recommended - Easiest)</h2>
+            <p>This is the simplest method - no mod manager required! Just drag and drop.</p>
 
             <div class="step">
                 <span class="step-number">1</span>
-                <span class="step-title">Download and Install BG3 Mod Manager</span>
+                <span class="step-title">Download and Unzip</span>
                 <div class="step-content">
                     <ol>
-                        <li>Go to the <a href="https://github.com/LaughingLeader/BG3ModManager/releases" target="_blank">BG3 Mod Manager releases page</a></li>
-                        <li>Download the latest <code>.zip</code> file</li>
-                        <li>Extract it to a folder (NOT in Program Files)</li>
-                        <li>Run <code>BG3ModManager.exe</code></li>
+                        <li>Go to <a href="https://www.nexusmods.com/baldursgate3/mods/327" target="_blank">Party Limit Begone on Nexus Mods</a></li>
+                        <li>Click the <strong>"Files"</strong> tab</li>
+                        <li>Download the <strong>Standalone version</strong></li>
+                        <li>Unzip the downloaded file</li>
                     </ol>
                     <div class="gif-placeholder">
-                        <p>[GIF: Downloading and extracting BG3 Mod Manager]</p>
-                        <!-- Replace with: <img src="gifs/step1-download-manager.gif" alt="Downloading BG3 Mod Manager"> -->
+                        <p>[GIF: Downloading standalone version from Nexus Mods]</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <span class="step-title">Copy to Game Folder</span>
+                <div class="step-content">
+                    <p>Drag and drop the <strong>entire Mods folder</strong> into your Baldur's Gate 3 Data folder:</p>
+                    <div class="code-block">
+                        <code>\steamapps\common\Baldurs Gate 3\Data</code>
+                    </div>
+                    <p><em>Example full path: C:\Program Files (x86)\Steam\steamapps\common\Baldurs Gate 3\Data</em></p>
+                    <div class="gif-placeholder">
+                        <p>[GIF: Dragging Mods folder to Data directory]</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">3</span>
+                <span class="step-title">That's It! Launch and Play</span>
+                <div class="step-content">
+                    <p>Start the game and enjoy!</p>
+                    <div class="info-box">
+                        <h3>Important</h3>
+                        <p><strong>Dismiss one party member</strong> if you already have 4 with you. This will reset the party limit and set it to 16.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="success-box">
+                <h3>Done!</h3>
+                <p>You can now have up to 16 companions in single player!</p>
+                <p style="margin-top: 10px;"><strong>Want 5-8 players in multiplayer?</strong> Continue to the <a href="#mp-patch">Multiplayer Patch</a> section.</p>
+            </div>
+        </section>
+
+        <section id="method2">
+            <h2>Method 2: Script Extender Version</h2>
+            <p>Use this method if you're already using other Script Extender mods. Vortex also works if you have Script Extender installed.</p>
+
+            <div class="step">
+                <span class="step-number">1</span>
+                <span class="step-title">Download and Setup BG3 Mod Manager</span>
+                <div class="step-content">
+                    <ol>
+                        <li>Download <a href="https://github.com/LaughingLeader/BG3ModManager/releases" target="_blank">BG3 Mod Manager</a></li>
+                        <li>Extract and run it</li>
+                    </ol>
+                    <div class="gif-placeholder">
+                        <p>[GIF: Setting up BG3 Mod Manager]</p>
                     </div>
                 </div>
             </div>
@@ -416,153 +492,101 @@
                 <span class="step-number">2</span>
                 <span class="step-title">Install Script Extender</span>
                 <div class="step-content">
-                    <p>Party Limit Begone requires Script Extender to work.</p>
                     <ol>
-                        <li>In BG3 Mod Manager, go to <strong>Tools</strong> menu</li>
-                        <li>Click <strong>"Download & Extract the Script Extender"</strong></li>
-                        <li>Wait for it to complete</li>
+                        <li>In the mod manager, go to <strong>Tools</strong></li>
+                        <li>Select <strong>"Download & Install the Script Extender"</strong></li>
+                        <li>Click <strong>Yes</strong> when prompted</li>
                     </ol>
                     <div class="gif-placeholder">
-                        <p>[GIF: Installing Script Extender from Tools menu]</p>
-                        <!-- Replace with: <img src="gifs/step2-script-extender.gif" alt="Installing Script Extender"> -->
+                        <p>[GIF: Installing Script Extender]</p>
                     </div>
                 </div>
             </div>
 
             <div class="step">
                 <span class="step-number">3</span>
-                <span class="step-title">Download Party Limit Begone</span>
+                <span class="step-title">Download and Import the Mod</span>
                 <div class="step-content">
                     <ol>
-                        <li>Go to <a href="https://www.nexusmods.com/baldursgate3/mods/327" target="_blank">Party Limit Begone on Nexus Mods</a></li>
-                        <li>Click the <strong>"Files"</strong> tab</li>
-                        <li>Click <strong>"Manual Download"</strong> on the main file</li>
-                        <li>Save the <code>.zip</code> file somewhere you can find it</li>
+                        <li>Download Party Limit Begone from <a href="https://www.nexusmods.com/baldursgate3/mods/327" target="_blank">Nexus Mods</a></li>
+                        <li><strong>Drop the zip file</strong> directly into your mod manager window</li>
                     </ol>
                     <div class="gif-placeholder">
-                        <p>[GIF: Downloading from Nexus Mods]</p>
-                        <!-- Replace with: <img src="gifs/step3-download-mod.gif" alt="Downloading from Nexus Mods"> -->
+                        <p>[GIF: Dropping zip into mod manager]</p>
                     </div>
                 </div>
             </div>
 
             <div class="step">
                 <span class="step-number">4</span>
-                <span class="step-title">Import the Mod</span>
-                <div class="step-content">
-                    <ol>
-                        <li>In BG3 Mod Manager, go to <strong>File → Import Mod</strong></li>
-                        <li>Select the <code>.zip</code> file you downloaded</li>
-                        <li>The mod will appear in the right panel (Inactive Mods)</li>
-                    </ol>
-                    <div class="gif-placeholder">
-                        <p>[GIF: Importing mod into BG3 Mod Manager]</p>
-                        <!-- Replace with: <img src="gifs/step4-import-mod.gif" alt="Importing mod"> -->
-                    </div>
-                </div>
-            </div>
-
-            <div class="step">
-                <span class="step-number">5</span>
                 <span class="step-title">Activate the Mod</span>
                 <div class="step-content">
                     <ol>
-                        <li><strong>Drag</strong> the mod from the right panel to the left panel (Active Mods)</li>
-                        <li>Click the <strong>Save icon</strong> (or press Ctrl+S) to save your load order</li>
-                        <li>Click <strong>"Export Load Order to Game"</strong> button</li>
+                        <li>Go to <strong>File → Reload All</strong></li>
+                        <li><strong>Drag and drop</strong> Party Limit Begone from the right side to the left (Active Mods)</li>
+                        <li>Go to <strong>File → Save Order</strong></li>
                     </ol>
                     <div class="gif-placeholder">
-                        <p>[GIF: Dragging mod to active and exporting]</p>
-                        <!-- Replace with: <img src="gifs/step5-activate-mod.gif" alt="Activating mod"> -->
-                    </div>
-                </div>
-            </div>
-
-            <div class="step">
-                <span class="step-number">6</span>
-                <span class="step-title">Launch the Game</span>
-                <div class="step-content">
-                    <ol>
-                        <li>Start Baldur's Gate 3</li>
-                        <li>If you see a "data mismatch" warning, click through it</li>
-                        <li>Load your save or start a new game</li>
-                        <li><strong>Dismiss one party member</strong>, then re-add them to activate the new limit</li>
-                    </ol>
-                    <div class="gif-placeholder">
-                        <p>[GIF: Launching game and dismissing/re-adding party member]</p>
-                        <!-- Replace with: <img src="gifs/step6-launch-game.gif" alt="Launching game"> -->
+                        <p>[GIF: Activating mod and saving order]</p>
                     </div>
                 </div>
             </div>
 
             <div class="success-box">
-                <h3>You're Done!</h3>
-                <p>The mod is now installed. You can have up to 16 companions or 8 players in your party!</p>
+                <h3>Done!</h3>
+                <p>Launch the game and enjoy up to 16 companions!</p>
+                <p style="margin-top: 10px;"><strong>Want 5-8 players in multiplayer?</strong> Continue to the <a href="#mp-patch">Multiplayer Patch</a> section.</p>
             </div>
         </section>
 
-        <section id="method2">
-            <h2>Method 2: Manual Installation</h2>
-            <p>If you prefer not to use a mod manager, you can install manually.</p>
+        <section id="mp-patch">
+            <h2>Multiplayer Patch (Required for 5+ Players)</h2>
+            <p>If you want more than 4 players in multiplayer, you need to apply this additional patch. <strong>First complete Method 1 or Method 2 above.</strong></p>
 
             <div class="step">
                 <span class="step-number">1</span>
-                <span class="step-title">Download the Mod</span>
+                <span class="step-title">Download the Multiplayer Patch</span>
                 <div class="step-content">
                     <ol>
                         <li>Go to <a href="https://www.nexusmods.com/baldursgate3/mods/327" target="_blank">Party Limit Begone on Nexus Mods</a></li>
-                        <li>Download the main file</li>
-                        <li>Extract the <code>.zip</code> file</li>
+                        <li>Download the <strong>Multiplayer Patch</strong> file</li>
+                        <li>Unzip it</li>
                     </ol>
                 </div>
             </div>
 
             <div class="step">
                 <span class="step-number">2</span>
-                <span class="step-title">Move Files to Game Folder</span>
-                <div class="step-content">
-                    <p>Move the entire <code>Mods</code> folder from the extracted files into your BG3 Data directory:</p>
-                    <div class="code-block">
-                        <code>C:\Program Files (x86)\Steam\steamapps\common\Baldurs Gate 3\Data</code>
-                    </div>
-                    <p><em>Note: Your Steam path may be different if you installed Steam elsewhere.</em></p>
-                    <div class="gif-placeholder">
-                        <p>[GIF: Moving Mods folder to Data directory]</p>
-                        <!-- Replace with: <img src="gifs/manual-step2-move-files.gif" alt="Moving files"> -->
-                    </div>
-                </div>
-            </div>
-
-            <div class="step">
-                <span class="step-number">3</span>
                 <span class="step-title">Run the Patcher</span>
                 <div class="step-content">
-                    <ol>
-                        <li>Find <code>PartyLimitBegonePatcher.bat</code> in the extracted files</li>
-                        <li>Find your <code>bg3.exe</code> file (in the game's <code>bin</code> folder)</li>
-                        <li><strong>Drag and drop</strong> <code>bg3.exe</code> onto the <code>.bat</code> file</li>
-                        <li>A backup will be created automatically</li>
-                    </ol>
+                    <p><strong>Drag and drop</strong> either your <code>bg3.exe</code> OR <code>bg3_dx11.exe</code> onto the <code>PartyLimitBegonePatcher.bat</code> file.</p>
                     <div class="code-block">
-                        <code>bg3.exe location: C:\Program Files (x86)\Steam\steamapps\common\Baldurs Gate 3\bin\bg3.exe</code>
+                        <code>EXE location: \steamapps\common\Baldurs Gate 3\bin\</code>
                     </div>
+                    <p style="margin-top: 10px;">The patcher will <strong>create a backup</strong> for you automatically.</p>
+
+                    <div class="info-box">
+                        <h3>Which EXE to use?</h3>
+                        <ul>
+                            <li><code>bg3.exe</code> - If you use <strong>Vulkan</strong> in the Larian launcher</li>
+                            <li><code>bg3_dx11.exe</code> - If you use <strong>DirectX 11</strong> in the Larian launcher</li>
+                        </ul>
+                    </div>
+
                     <div class="gif-placeholder">
-                        <p>[GIF: Dragging bg3.exe onto the patcher]</p>
-                        <!-- Replace with: <img src="gifs/manual-step3-patcher.gif" alt="Running patcher"> -->
+                        <p>[GIF: Dragging exe onto patcher]</p>
                     </div>
                 </div>
             </div>
 
-            <div class="step">
-                <span class="step-number">4</span>
-                <span class="step-title">Launch and Verify</span>
-                <div class="step-content">
-                    <ol>
-                        <li>Start Baldur's Gate 3</li>
-                        <li>Dismiss the "data mismatch" warning if it appears</li>
-                        <li>Dismiss and re-add a party member to activate the new limit</li>
-                    </ol>
-                </div>
+            <div class="warning-box">
+                <h3>Windows Defender Warning</h3>
+                <p>Windows Defender might flag the patcher on some systems - <strong>this is safe to use</strong>. Nexus Mods scans every upload. Just allow it and continue.</p>
+            </div>
+
+            <div class="success-box">
+                <h3>Done!</h3>
+                <p>You can now play with up to 8 players in multiplayer!</p>
             </div>
         </section>
 
@@ -629,10 +653,75 @@
                 <p>Simply join the host's game as normal. No installation required! If you see a warning about data mismatch, just click through it.</p>
             </div>
 
-            <div class="warning-box">
-                <h3>Cross-Play Note</h3>
-                <p>If playing with console friends: Have console players join <strong>first</strong>, then PC players join after. This helps avoid connection issues.</p>
+        </section>
+
+        <section id="crossplay">
+            <h2>Console/Crossplay Support</h2>
+
+            <div class="info-box">
+                <h3>Good News!</h3>
+                <p>The <strong>Standalone version</strong> works with console players if the hosting player is on PC!</p>
             </div>
+
+            <h3>Limitations</h3>
+            <ul>
+                <li>Only <strong>3 console players</strong> are supported</li>
+                <li>Console players <strong>must join first</strong> because only PC players can join after 4 slots are taken</li>
+                <li>Setup: Host (PC) + 3 console players first, then PC players 5+ join after</li>
+            </ul>
+
+            <h3>Player 5+ Connection Methods</h3>
+            <p>Players 5 and above can only join via:</p>
+            <table>
+                <tr>
+                    <th>Method</th>
+                    <th>How</th>
+                </tr>
+                <tr>
+                    <td><strong>LAN Mode (Hamachi)</strong></td>
+                    <td>Host and player 5+ must be in the same Hamachi network. Host enables "LAN connection" in Options → Gameplay.</td>
+                </tr>
+                <tr>
+                    <td><strong>Direct IP</strong></td>
+                    <td>Host opens port <code>23253</code>, then players type the host's IP in the direct code box to join.</td>
+                </tr>
+            </table>
+
+            <h3>Continuing an Existing Crossplay Save</h3>
+            <p>To continue an existing crossplay save with more than 4 players:</p>
+            <ol>
+                <li>Create a <strong>new fresh lobby</strong></li>
+                <li>Have everyone join</li>
+                <li>Start a new game</li>
+                <li>Once in-game, <strong>load your old main save</strong></li>
+            </ol>
+            <p><em>Note: This creates new save files, so the host should clear them out periodically.</em></p>
+        </section>
+
+        <section id="linux-mac">
+            <h2>Linux and Mac Support</h2>
+
+            <div class="success-box">
+                <h3>PLB Works on Linux and Mac!</h3>
+                <p>The standalone version is supported on both Linux and Mac.</p>
+            </div>
+
+            <div class="warning-box">
+                <h3>MP Patch Installation is Tricky</h3>
+                <p>The multiplayer patch requires extra steps on Linux/Mac.</p>
+            </div>
+
+            <h3>Easiest Solution</h3>
+            <p>Ask a friend on Windows to send you their <strong>patched exe file</strong> after they run the patcher.</p>
+
+            <h3>Manual Method (with Wine)</h3>
+            <ol>
+                <li>Open <code>PartyLimitBegonePatcher.bat</code> with any text editor</li>
+                <li>Find this line: <code>Set "GetFileName=%~n1.exe"</code></li>
+                <li>Change it to: <code>Set "GetFileName=bg3.exe"</code></li>
+                <li>Place your <code>bg3.exe</code> file in the same folder as the patcher</li>
+                <li>Run <code>PartyLimitBegonePatcher.bat</code> with Wine</li>
+            </ol>
         </section>
 
         <section id="troubleshooting">
@@ -677,10 +766,10 @@
         </section>
 
         <section id="known-issues">
-            <h2>Known Issues (Patch 8)</h2>
+            <h2>Known Issues (READ THIS!)</h2>
 
             <div class="warning-box">
-                <h3>Patch 8 Specific Bugs (from Mod Author)</h3>
+                <h3>Patch 8 Specific Bugs</h3>
                 <ul>
                     <li><strong>Honor Mode Issue:</strong> Fresh lobbies with more than 4 players cause problems. <strong>Workaround:</strong> Launch with 4 or fewer players, then invite the rest once you're fully in-game.</li>
                     <li><strong>Crossplay Lobbies:</strong> No longer display the direct connection ID. Playing with more than 4 players still works using <strong>LAN mode with Hamachi</strong>.</li>
@@ -688,13 +777,13 @@
                 </ul>
             </div>
 
-            <div class="info-box">
-                <h3>General Issues</h3>
+            <div class="important-box">
+                <h2>General Known Bugs</h2>
                 <ul>
-                    <li><strong>Some events may glitch</strong> with 5+ party members. Solution: Temporarily dismiss extra members for that encounter.</li>
-                    <li><strong>Grymforge boat:</strong> Reduce party to 4 members before sailing.</li>
-                    <li><strong>Camp sleeping bugs:</strong> Use awake companions or reduce party to 4.</li>
-                    <li><strong>Some cutscenes</strong> are designed for 4 players and may look odd with more.</li>
+                    <li><strong>Grymforge Map Transition:</strong> Reduce your party size to 4 members <strong>before sailing with the boat</strong>. If characters are stuck, dismiss the ones with you and sail back and forth to unstick the rest. <em>Note: After using the boat, a timed quest is triggered and going to camp will progress it.</em></li>
+                    <li><strong>Quest/Important Items Bug:</strong> Some quest or important items aren't registered correctly if carried by a 5th or higher party member. <strong>Make sure your first 4 party members carry any important items!</strong></li>
+                    <li><strong>Camp Sleeping Bug:</strong> Use one of the awake companions and talk to Lae'zel, use a camp chest, or reduce your party size to 4 before resting.</li>
+                    <li><strong>Hardcoded Events:</strong> Some in-game events are hardcoded for 4 party members and will glitch out. This is usually solved by dismissing the additional members/players or by teleporting back and forth.</li>
                 </ul>
             </div>
 
